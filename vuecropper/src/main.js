@@ -6,6 +6,10 @@ import store from "./store/store";
 import Vuebar from "vuebar";
 import "./plugins/base";
 import VueSkycons from "vue-skycons";
+import dotenv from 'dotenv'
+
+dotenv.config()
+
 Vue.use(VueSkycons, {
   color: "#1e88e5",
 });

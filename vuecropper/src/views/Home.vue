@@ -112,13 +112,14 @@ export default {
     cropImg: "",
     elementVisible: false,
   }),
+  mounted() {
+    console.log(process.env.VUE_APP_URL);
+  },
   methods: {
     cropImage() {
-      console.log(this.imgSrc, "this.imgSrc");
       // get image data for post processing, e.g. upload or setting image src
       if (this.imgSrc != "") {
         this.cropImg = this.$refs.cropper.getCroppedCanvas().toDataURL();
-        console.log(this.cropImg, "hhhhhhhhhhhhhhh");
         this.$refs.cropper.getCroppedCanvas().toBlob((blob) => {
           let i = new FormData();
           i.append("picture", blob);
@@ -159,13 +160,11 @@ export default {
         this.isLoaded = true;
         const formData = new FormData();
         formData.append("files", this.cropImg);
-        axios
-          .post("http://localhost:5000/getImage", formData)
-          .then((response) => {
-            this.isLoaded = false;
-            this.getImgText = response.data;
-            this.cropImg = "";
-          });
+        axios.post(process.env.VUE_APP_URL, formData).then((response) => {
+          this.isLoaded = false;
+          this.getImgText = response.data;
+          this.cropImg = "";
+        });
       } else {
         this.selectImgToCrop = "please select the image to crop";
       }

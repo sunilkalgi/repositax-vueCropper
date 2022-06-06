@@ -9,9 +9,9 @@
   },
   "dependencies": {
     "@mdi/js": "^5.6.55",
-    "axios": "^0.27.2",
     "algoliasearch": "^4.5.1",
     "apexcharts": "^3.21.0",
+    "axios": "^0.27.2",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
     "core-js": "^3.6.5",
@@ -20,6 +20,7 @@
     "devexpress-gantt": "0.0.29",
     "devextreme": "^19.2.9",
     "devextreme-vue": "^19.2.9",
+    "dotenv": "^16.0.1",
     "dx-systemjs-vue-browser": "latest",
     "feather-icons": "^4.28.0",
     "instantsearch.css": "^7.4.5",
