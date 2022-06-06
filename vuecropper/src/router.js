@@ -23,13 +23,13 @@ const router = new Router({
   routes: [
     {
       path: "/",
-      redirect: "starterpage",
+      redirect: "/",
       component: () => import("@/layouts/full-layout/Layout"),
       children: [
         {
-          name: "StarterPage",
-          path: "starterpage",
-          component: () => import("@/views/StarterPage"),
+          name: "/",
+          path: "/",
+          component: () => import("@/views/Home.vue"),
         },
       ],
     },
